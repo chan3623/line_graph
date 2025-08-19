@@ -5,7 +5,7 @@
   "main": "graph.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server --watch graph.json --port $PORT --static ./"
+    "start": "json-server --watch graph.json --port $PORT --host 0.0.0.0 --static ./"
   },
   "keywords": [],
   "author": "",
