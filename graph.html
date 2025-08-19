@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <title>Line-Graph</title>
-    <base href="/line_graph_client/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -12,13 +10,12 @@
         rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" href="./img/xr3bSopc.ico">
-    <link rel="stylesheet" href="/line_graph_client/graph.css">
+    <link rel="stylesheet" href="./graph.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
-    <script defer src="/line_graph_client/graph.js"></script>
+    <script defer src="./graph.js"></script>
 </head>
 
 <body>
-
     <button id="modalBtn" class="modalBtn"></button>
     <div id="modal" class="modal">
         <div class="modalBox">
@@ -31,27 +28,26 @@
                 </a>
             </div>
             <div class="restBox postBox">
-                POST<input id="postInput2" class="postInput" type="text" value="" placeholder=" 생성할 이름 입력" />
-                <input id="postInput3" class="postInput" type="number" min="0" max="100" maxlength="3" value=""
-                    placeholder=" 점수 입력" />
+                POST<input id="postInput2" class="postInput" type="text" value="" placeholder=" 생성할 이름 입력"/>
+                <input id="postInput3" class="postInput" type="number" min="0" max="100" maxlength="3" value="" placeholder=" 점수 입력"/>
                 <button id="postBtn" type="button" class="postBtn">생성</button>
             </div>
             <div class="restBox patchBox">
-                PATCH<input id="patchInput" class="patchInput" type="text" value="" placeholder=" 변경할 이름 입력" />
-                <input id="patchInput2" class="patchInput" type="text" value="" placeholder=" 새로운 이름 입력" />
-                <input id="patchInput3" class="patchInput" type="number" min="0" max="100" maxlength="3" value=""
-                    placeholder=" 새로운 점수 입력" />
+                PATCH<input id="patchInput" class="patchInput" type="text" value="" placeholder=" 변경할 이름 입력"/>
+                <input id="patchInput2" class="patchInput" type="text" value="" placeholder=" 새로운 이름 입력"/>
+                <input id="patchInput3" class="patchInput" type="number" min="0" max="100" maxlength="3"
+                    value="" placeholder=" 새로운 점수 입력"/>
                 <button id="patchBtn" type="button" class="patchBtn">수정</button>
             </div>
             <div class="restBox deleteBox">
-                DELETE<input id="deleteInput" class="deleteInput" type="text" value="" placeholder=" 삭제할 이름 입력" />
+                DELETE<input id="deleteInput" class="deleteInput" type="text" value="" placeholder=" 삭제할 이름 입력"/>
                 <button id="deleteBtn" type="button" class="deleteBtn">삭제</button>
             </div>
         </div>
     </div>
     <div class="manualBox">
         <button class="manualBtn" id="manualBtn">수동 데이터 입력</button>
-    </div>
+    </div> 
     <div class="containerBox">
         <canvas id="myCanvas" width="1200px" height="450px"></canvas>
     </div>
