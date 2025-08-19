@@ -13,14 +13,14 @@ class CanvasDraw {
         this.canvasPadding = 30;
         this.xBarStep = 0;
         this.yBarStep = 0;
-        this.local = "kkms4001.iptime.org:33050";
-        //this.kkms = "kkms4001.iptime.org:33050";
+        this.local = "https://chan3623.github.io/line_graph/";
+        //this.kkms = "http://kkms4001.iptime.org:33050";
     }
 
     fetchData() {
         // AJAX 요청을 생성합니다.
         const xhr = new XMLHttpRequest();
-        const url = `http://${this.local}/graphData`;
+        const url = `${this.local}/graphData`;
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
@@ -176,10 +176,10 @@ class CanvasDraw {
         let midValue = 0;
         let temp = 0;
         let countList = [];
-	    console.log(this.copyNameByScoreList);
+        console.log(this.copyNameByScoreList);
         for (let i = 0; i < this.copyNameByScoreList.length; i++) {
             temp += this.copyNameByScoreList[i];
-		//console.log(temp);
+            //console.log(temp);
             if (this.copyNameByScoreList.length % 2 !== 0) {
                 midValue = this.copyNameByScoreList[Math.floor(this.copyNameByScoreList.length / 2)];
             } else {
@@ -365,7 +365,7 @@ class ModalRest {
         (document.getElementById("postBtn").onclick = () => {
             if (0 <= postInput3.value && postInput3.value < 101 && postInput2.value.length !== 0) {
                 this.xhrStatus = 201;
-                this.xhr.open("POST", `http://${myC.local}/graphData`);
+                this.xhr.open("POST", `${myC.local}/graphData`);
                 this.xhr.setRequestHeader("Content-type", "application/json");
                 this.xhr.send(
                     JSON.stringify({
@@ -376,13 +376,13 @@ class ModalRest {
                 );
                 this.modal.style.display = "none";
                 //this.restData();
-		l//ocation.reload();
+                l//ocation.reload();
             } else {
                 swal("값을 다시 확인해주세요.");
             }
         });
         this.restData();
-	//location.reload();
+        //location.reload();
     }
     restPatchData() {
         //==============patch로 데이터 수정((xhr.status === 200)=====================//
@@ -398,7 +398,7 @@ class ModalRest {
                     }
                 }
                 this.xhrStatus = 200;
-                this.xhr.open("PATCH", `http://${myC.local}/graphData/${nameToId}`);
+                this.xhr.open("PATCH", `${myC.local}/graphData/${nameToId}`);
                 this.xhr.setRequestHeader("Content-type", "application/json");
                 this.xhr.send(
                     JSON.stringify({
@@ -408,14 +408,14 @@ class ModalRest {
                     })
                 );
                 this.modal.style.display = "none";
-		//this.restData();
+                //this.restData();
                 //location.reload();
             } else {
                 swal("값을 다시 확인해주세요.");
             }
         });
         this.restData();
-	//location.reload();
+        //location.reload();
     }
 
     restDeleteData() {
@@ -431,18 +431,18 @@ class ModalRest {
                     }
                 }
                 this.xhrStatus = 200;
-                this.xhr.open("DELETE", `http://${myC.local}/graphData/${nameToId}`);
+                this.xhr.open("DELETE", `${myC.local}/graphData/${nameToId}`);
                 this.xhr.setRequestHeader("Content-type", "application/json");
                 this.xhr.send();
                 this.modal.style.display = "none";
-		//this.restData();
+                //this.restData();
                 //location.reload();
-            }else{
+            } else {
                 swal("값을 다시 확인해주세요.");
             }
         });
         this.restData();
-	//location.reload();
+        //location.reload();
     }
 
     restData() {
@@ -451,7 +451,7 @@ class ModalRest {
             if (this.xhr.status === this.xhrStatus) {
                 // 201: Created
                 console.log(this.xhr.responseText);
-		location.reload();
+                location.reload();
             } else {
                 console.log("Error!");
             }
